@@ -1,0 +1,426 @@
+:root {
+  --ink: #1A1A1A;
+  --bone: #EDE6D6;
+  --burgundy: #6E2A2A;
+  --brass: #A88A56;
+
+  --font-headline: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+
+  --section-pad: 140px;
+  --section-pad-mobile: 72px;
+  --max-width: 1200px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--bone);
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+h1, h2 {
+  font-family: var(--font-headline);
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.container.narrow {
+  max-width: 720px;
+}
+
+.eyebrow {
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--burgundy);
+  margin-bottom: 16px;
+}
+
+.eyebrow-light { color: var(--brass); }
+
+/* ---------- Header ---------- */
+.site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(237, 230, 214, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(26,26,26,0.08);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
+}
+
+.logo {
+  font-family: var(--font-headline);
+  font-size: 18px;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  gap: 32px;
+}
+
+.nav a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: var(--ink);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: opacity 0.2s ease;
+}
+.btn:hover { opacity: 0.85; }
+
+.btn-solid {
+  background: var(--burgundy);
+  color: var(--bone);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--ink);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  background: var(--ink);
+  overflow: hidden;
+}
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, #232020 0%, #17140f 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  position: relative;
+  color: var(--bone);
+  padding-bottom: 120px;
+  padding-top: 200px;
+}
+
+.hero h1 {
+  font-size: clamp(36px, 6vw, 68px);
+  max-width: 780px;
+}
+
+.hero-sub {
+  margin-top: 24px;
+  max-width: 480px;
+  font-size: 17px;
+  color: rgba(237,230,214,0.8);
+}
+
+.hero .btn { margin-top: 40px; }
+
+/* ---------- Placeholder blocks ---------- */
+.placeholder-label {
+  color: rgba(237,230,214,0.5);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+.services .placeholder-label,
+.barbers .placeholder-label,
+.space-gallery .placeholder-label,
+.location .placeholder-label,
+.booking .placeholder-label {
+  color: rgba(26,26,26,0.4);
+}
+
+/* ---------- Philosophy ---------- */
+.philosophy {
+  padding: var(--section-pad) 0;
+  text-align: center;
+}
+
+.philosophy-text {
+  font-size: 22px;
+  font-family: var(--font-headline);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* ---------- Services ---------- */
+.services {
+  padding: var(--section-pad) 0;
+  background: var(--bone);
+}
+
+.services h2 {
+  font-size: 32px;
+  margin-bottom: 56px;
+}
+
+.services-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-row {
+  display: grid;
+  grid-template-columns: 260px 1fr 100px;
+  gap: 32px;
+  align-items: baseline;
+  padding: 28px 0;
+  border-top: 1px solid rgba(26,26,26,0.12);
+}
+
+.service-row:last-child {
+  border-bottom: 1px solid rgba(26,26,26,0.12);
+}
+
+.service-name {
+  font-family: var(--font-headline);
+  font-size: 19px;
+}
+
+.service-desc {
+  font-size: 15px;
+  color: rgba(26,26,26,0.75);
+}
+
+.service-price {
+  text-align: right;
+  font-size: 15px;
+  color: rgba(26,26,26,0.5);
+}
+
+/* ---------- Barbers ---------- */
+.barbers {
+  padding: var(--section-pad) 0;
+  background: #E4DBC8;
+}
+
+.barbers h2 {
+  font-size: 32px;
+  margin-bottom: 56px;
+}
+
+.barber-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.barber-photo {
+  aspect-ratio: 3/4;
+  background: rgba(26,26,26,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.barber-name {
+  font-family: var(--font-headline);
+  font-size: 18px;
+}
+
+.barber-meta {
+  font-size: 14px;
+  color: rgba(26,26,26,0.6);
+  margin: 6px 0 14px;
+}
+
+.link {
+  font-size: 14px;
+  color: var(--burgundy);
+}
+
+/* ---------- Space gallery ---------- */
+.space-gallery {
+  padding: var(--section-pad) 0;
+}
+
+.space-gallery h2 {
+  font-size: 32px;
+  margin-bottom: 56px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.gallery-item {
+  aspect-ratio: 4/5;
+  background: rgba(26,26,26,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------- Trust ---------- */
+.trust {
+  padding: var(--section-pad) 0;
+  background: var(--ink);
+  color: var(--bone);
+  text-align: center;
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+  margin-bottom: 72px;
+  text-align: left;
+}
+
+.trust-item p {
+  font-size: 16px;
+  color: rgba(237,230,214,0.85);
+}
+
+.testimonial {
+  max-width: 640px;
+  margin: 0 auto 40px;
+  padding: 32px;
+  border: 1px solid rgba(237,230,214,0.2);
+}
+
+.testimonial footer {
+  margin-top: 16px;
+  font-size: 14px;
+  color: rgba(237,230,214,0.6);
+}
+
+.trust-closing {
+  max-width: 640px;
+  margin: 0 auto;
+  font-family: var(--font-headline);
+  font-size: 19px;
+  color: rgba(237,230,214,0.9);
+}
+
+/* ---------- Membership ---------- */
+.membership {
+  padding: var(--section-pad) 0;
+  text-align: center;
+}
+
+/* ---------- Booking ---------- */
+.booking {
+  padding: var(--section-pad) 0;
+  text-align: center;
+}
+
+.booking h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.booking-embed {
+  height: 480px;
+  background: rgba(26,26,26,0.05);
+  border: 1px dashed rgba(26,26,26,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------- Location ---------- */
+.location {
+  padding: var(--section-pad) 0 60px;
+  background: var(--ink);
+  color: var(--bone);
+}
+
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 56px;
+}
+
+.location-grid p {
+  margin-bottom: 10px;
+}
+
+.map-embed {
+  aspect-ratio: 4/3;
+  background: rgba(237,230,214,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(237,230,214,0.15);
+  padding-top: 24px;
+  font-size: 13px;
+  color: rgba(237,230,214,0.5);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .barber-grid,
+  .gallery-grid,
+  .trust-grid {
+    grid-template-columns: 1fr;
+  }
+  .location-grid {
+    grid-template-columns: 1fr;
+  }
+  .service-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .service-price { text-align: left; }
+}
+
+@media (max-width: 700px) {
+  :root {
+    --section-pad: var(--section-pad-mobile);
+  }
+  .nav { display: none; }
+  .nav-toggle { display: block; }
+  .header-inner .btn-outline { display: none; }
+}
