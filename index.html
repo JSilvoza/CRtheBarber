@@ -64,37 +64,43 @@
       <div class="service-row">
         <div class="service-name">The Signature Cut</div>
         <div class="service-desc">Walk out with a shape that still looks sharp on day ten, not just the day you leave the chair.</div>
-        <div class="service-price">[ $XX ]</div>
+        <div class="service-price">$45</div>
+        <a href="#booking" class="btn btn-outline service-book-btn" data-service="The Signature Cut">Book</a>
       </div>
 
       <div class="service-row">
         <div class="service-name">Cut &amp; Beard, One Visit</div>
         <div class="service-desc">One appointment, one barber, nothing left for you to clean up yourself at the bathroom mirror later.</div>
-        <div class="service-price">[ $XX ]</div>
+        <div class="service-price">$70</div>
+        <a href="#booking" class="btn btn-outline service-book-btn" data-service="Cut & Beard, One Visit">Book</a>
       </div>
 
       <div class="service-row">
         <div class="service-name">The Skin Fade</div>
         <div class="service-desc">A fade close enough and clean enough that your next barber won't have to ask what you had done.</div>
-        <div class="service-price">[ $XX ]</div>
+        <div class="service-price">$50</div>
+        <a href="#booking" class="btn btn-outline service-book-btn" data-service="The Skin Fade">Book</a>
       </div>
 
       <div class="service-row">
         <div class="service-name">Beard Trim &amp; Sculpt</div>
         <div class="service-desc">A beard that reads deliberate, not just "not yet shaved" or "not yet trimmed."</div>
-        <div class="service-price">[ $XX ]</div>
+        <div class="service-price">$30</div>
+        <a href="#booking" class="btn btn-outline service-book-btn" data-service="Beard Trim & Sculpt">Book</a>
       </div>
 
       <div class="service-row">
         <div class="service-name">Hot Towel Straight Razor Shave</div>
         <div class="service-desc">The closest shave you'll get without a single nick, and forty minutes where your phone stays in your pocket.</div>
-        <div class="service-price">[ $XX ]</div>
+        <div class="service-price">$45</div>
+        <a href="#booking" class="btn btn-outline service-book-btn" data-service="Hot Towel Straight Razor Shave">Book</a>
       </div>
 
       <div class="service-row">
         <div class="service-name">Grey Blending</div>
         <div class="service-desc">Grey softened, not erased — you still look like yourself, just less tired.</div>
-        <div class="service-price">[ $XX ]</div>
+        <div class="service-price">$60</div>
+        <a href="#booking" class="btn btn-outline service-book-btn" data-service="Grey Blending">Book</a>
       </div>
 
     </div>
@@ -196,10 +202,42 @@
   <div class="container narrow">
     <p class="eyebrow">Booking</p>
     <h2>Reserve Your Chair</h2>
-    <!-- TODO: replace with your live booking widget (Squire, Booksy, Schedulicity, etc.) -->
-    <div class="booking-embed placeholder-label">
-      [ Live booking calendar embed goes here ]
-    </div>
+
+    <form id="booking-form" class="booking-form">
+      <div class="field">
+        <label for="service-select">Service</label>
+        <select id="service-select" required>
+          <option value="" disabled selected>Choose a service</option>
+          <option>The Signature Cut</option>
+          <option>Cut &amp; Beard, One Visit</option>
+          <option>The Skin Fade</option>
+          <option>Beard Trim &amp; Sculpt</option>
+          <option>Hot Towel Straight Razor Shave</option>
+          <option>Grey Blending</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="date-select">Date</label>
+        <input type="date" id="date-select" required>
+      </div>
+
+      <div class="field">
+        <label>Time <span class="field-note">(11:00 AM &ndash; 4:00 PM, 30-min slots)</span></label>
+        <div id="time-slots" class="time-slots"></div>
+      </div>
+
+      <button type="submit" class="btn btn-solid" id="reserve-btn" disabled>Confirm Reservation</button>
+    </form>
+
+    <p id="booking-confirmation" class="booking-confirmation" hidden></p>
+
+    <p class="placeholder-label booking-note">
+      [ This form sends a booking request by email. Replace SHOP_EMAIL in
+      script.js with your real contact address before publishing, or swap
+      this section for a live booking platform (Squire, Booksy,
+      Schedulicity) integration later. ]
+    </p>
   </div>
 </section>
 

@@ -205,11 +205,19 @@ h1, h2 {
 
 .service-row {
   display: grid;
-  grid-template-columns: 260px 1fr 100px;
-  gap: 32px;
-  align-items: baseline;
+  grid-template-columns: 220px 1fr 80px 110px;
+  gap: 24px;
+  align-items: center;
   padding: 28px 0;
   border-top: 1px solid rgba(26,26,26,0.12);
+}
+
+.service-book-btn {
+  padding: 10px 20px;
+  font-size: 13px;
+  text-align: center;
+  white-space: nowrap;
+  justify-self: end;
 }
 
 .service-row:last-child {
@@ -357,13 +365,85 @@ h1, h2 {
   margin-bottom: 40px;
 }
 
-.booking-embed {
-  height: 480px;
-  background: rgba(26,26,26,0.05);
-  border: 1px dashed rgba(26,26,26,0.2);
+.booking-form {
+  text-align: left;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.field label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.field-note {
+  font-weight: 400;
+  color: rgba(26,26,26,0.55);
+}
+
+.field select,
+.field input[type="date"] {
+  width: 100%;
+  padding: 14px 16px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  background: var(--bone);
+  border: 1px solid rgba(26,26,26,0.25);
+  border-radius: 2px;
+  color: var(--ink);
+}
+
+.time-slots {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  gap: 10px;
+}
+
+.time-slot {
+  padding: 12px 8px;
+  font-size: 14px;
+  background: var(--bone);
+  border: 1px solid rgba(26,26,26,0.25);
+  border-radius: 2px;
+  cursor: pointer;
+  color: var(--ink);
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.time-slot:hover {
+  border-color: var(--ink);
+}
+
+.time-slot.selected {
+  background: var(--burgundy);
+  border-color: var(--burgundy);
+  color: var(--bone);
+}
+
+#reserve-btn {
+  border: none;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+#reserve-btn:disabled {
+  background: rgba(110,42,42,0.35);
+  cursor: not-allowed;
+}
+
+.booking-confirmation {
+  margin-top: 28px;
+  padding: 16px 20px;
+  background: rgba(110,42,42,0.08);
+  border: 1px solid rgba(110,42,42,0.3);
+  font-size: 14px;
+}
+
+.booking-note {
+  margin-top: 24px;
 }
 
 /* ---------- Location ---------- */
@@ -414,6 +494,7 @@ h1, h2 {
     gap: 8px;
   }
   .service-price { text-align: left; }
+  .service-book-btn { justify-self: start; margin-top: 8px; }
 }
 
 @media (max-width: 700px) {
